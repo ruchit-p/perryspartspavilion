@@ -38,6 +38,7 @@ import Signup2 from "./pages/Signup2";
 import LoginPage from "./pages/Login";
 import Login2 from "./pages/Login2";
 import Cart from "./pages/Cart";
+import Cart2 from "./pages/Cart2";
 import ApproveTransactionPage from "./pages/ApproveTransaction";
 import { CartProvider } from "./context/CartContext";
 import { AuthProvider } from "./context/AuthContext";
@@ -80,7 +81,7 @@ function RoutesWithAuth() {
             path="/cart"
             element={
               <CartProvider>
-                <Cart />
+                <Cart2 />
               </CartProvider>
             }
           />

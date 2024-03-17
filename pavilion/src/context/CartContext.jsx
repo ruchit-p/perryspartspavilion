@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
     let isMounted = true;
     if (dbUser && isMounted) {
       fetchCartItems(dbUser);
-    } 
+    }
     // if there is no user signed in, the cart will be empty
     else {
       setCart([]);
@@ -75,7 +75,7 @@ export const CartProvider = ({ children }) => {
         });
 
         if (error) {
-            console.error("got erroro");
+          console.error("got erroro");
           console.error("Error removing item from cart:", error.message);
           // Handle the error, e.g., show an error message to the user
         } else {
@@ -102,7 +102,7 @@ export const CartProvider = ({ children }) => {
           id,
           item_id,
           quantity,
-          items ( id, name, category_id, model_number, manufacturer, quantity, storage_type_id, status_id )
+          items ( name, category_id, model_number, manufacturer, quantity, storage_type_id, status_id )
         `
         )
         .eq("user_id", dbUser.user_id);
@@ -135,8 +135,6 @@ export const CartProvider = ({ children }) => {
       return { error: error.message };
     }
   };
-
-  
 
   return (
     <CartContext.Provider

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { supabase } from "../supabaseClient";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -10,7 +9,7 @@ const Cart = () => {
   const [error, setError] = useState("");
   const { dbUser } = useAuth();
   const [items, setItems] = useState([]);
-  console.log(cartItems);
+
   useEffect(() => {
     getCart().then((data) => {
       setCartItems(data);
